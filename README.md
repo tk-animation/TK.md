@@ -25,6 +25,14 @@ After setting this repo's `origin` remote to your own GitHub repository:
 
 That script mirrors the Obsidian vault into `content/`, builds the site, commits changes, and pushes them. GitHub Actions then deploys the site to GitHub Pages.
 
+If GitHub Actions is unavailable, publish the generated static site directly to a `gh-pages` branch:
+
+```powershell
+.\scripts\publish-static-pages.ps1
+```
+
+Then set GitHub Pages to **Deploy from a branch**, branch `gh-pages`, folder `/ (root)`.
+
 ## Daily automatic publishing
 
 Register a Windows Scheduled Task:
