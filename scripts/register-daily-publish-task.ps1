@@ -4,7 +4,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$scriptPath = Resolve-Path (Join-Path $PSScriptRoot "publish-from-vault.ps1")
+$scriptPath = Resolve-Path (Join-Path $PSScriptRoot "publish-static-pages.ps1")
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 
 $action = New-ScheduledTaskAction `
