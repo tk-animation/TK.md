@@ -1,17 +1,36 @@
-# Quartz v5
+# Japanese Blog Quartz
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+This Quartz site publishes the Obsidian vault at:
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+```text
+C:\Users\victo\OneDrive\Documents\Obsidian Vault\Japanese-Blog
+```
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## Local preview
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+```powershell
+.\scripts\sync-vault.ps1
+npx quartz build --serve
+```
 
-## Sponsors
+Quartz serves the site at `http://localhost:8080`.
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## Publish from Obsidian
+
+After setting this repo's `origin` remote to your own GitHub repository:
+
+```powershell
+.\scripts\publish-from-vault.ps1
+```
+
+That script mirrors the Obsidian vault into `content/`, builds the site, commits changes, and pushes them. GitHub Actions then deploys the site to GitHub Pages.
+
+## Daily automatic publishing
+
+Register a Windows Scheduled Task:
+
+```powershell
+.\scripts\register-daily-publish-task.ps1 -At "20:00"
+```
+
+The task runs `publish-from-vault.ps1` every day. Change the time if you want publishing to happen earlier or later.
