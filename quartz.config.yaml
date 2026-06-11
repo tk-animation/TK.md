@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: null
   locale: en-US
-  baseUrl: tk-animation.github.io/japanese-blog-quartz
+  baseUrl: tk-animation.github.io/TK.md
   ignorePatterns:
     - private
     - templates
@@ -225,7 +225,7 @@ plugins:
     enabled: true
     options:
       links:
-        Source: https://github.com/tk-animation/japanese-blog-quartz
+        Source: https://github.com/tk-animation/TK.md
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer
